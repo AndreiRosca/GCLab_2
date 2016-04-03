@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="615.0" prefWidth="814.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+                  <MenuItem fx:id="drawMenuItem" mnemonicParsing="false" onAction="#drawShapes" text="Draw" />
+                  <MenuItem fx:id="clearMenuItem" mnemonicParsing="false" onAction="#clearShapes" text="Clear" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="quitMenuItem" mnemonicParsing="false" onAction="#closeApplication" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Transformations">
+          <items>
+                  <MenuItem fx:id="rotateMenuItem" mnemonicParsing="false" onAction="#rotateShapes" text="Rotate" />
+                  <MenuItem fx:id="scaleMenuItem" mnemonicParsing="false" onAction="#scaleShapes" text="Scale" />
+                  <MenuItem fx:id="translateMenuItem" mnemonicParsing="false" onAction="#translateShapes" text="Translate" />
+          </items>
+        </Menu>
+            <Menu mnemonicParsing="false" text="Rotation">
+               <items>
+                  <MenuItem fx:id="rotateWithTrailMenuItem" mnemonicParsing="false" onAction="#rotateShapesWithTrail" text="Rotate with trail" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Reflection">
+               <items>
+                  <MenuItem fx:id="positiveSlopeReflectionMenuItem" mnemonicParsing="false" onAction="#positiveSlopeReflection" text="Reflect around y=x" />
+                  <MenuItem fx:id="negativeSlopeReflectionMenuItem" mnemonicParsing="false" onAction="#negativeSlopeReflection" text="Reflect around y=-x" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Airplane">
+               <items>
+                  <MenuItem fx:id="drawAirplaneMenuItem" mnemonicParsing="false" onAction="#drawAirplane" text="Draw airplane" />
+                  <MenuItem fx:id="startAirplaneMenuItem" mnemonicParsing="false" onAction="#startAirplane" text="Start airplane" />
+                  <MenuItem fx:id="stopAirplaneMenuItem" disable="true" mnemonicParsing="false" onAction="#stopAirplane" text="Stop airplane" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Help">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane fx:id="anchorPane" maxHeight="-1.0" maxWidth="-1.0" prefHeight="412.0" prefWidth="639.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Polyline fx:id="triangleShape" fill="CHARTREUSE" layoutX="407.0" layoutY="126.0" strokeType="INSIDE">
+              <points>
+                <Double fx:value="-50.0" />
+                <Double fx:value="-40.0" />
+                <Double fx:value="50.0" />
+                <Double fx:value="-40.0" />
+                <Double fx:value="0.0" />
+                <Double fx:value="60.0" />
+                <Double fx:value="-50.0" />
+                <Double fx:value="-40.0" />
+              </points>
+            </Polyline>
+            <Polyline fx:id="squareShape" fill="#009eff" layoutX="407.0" layoutY="264.0" strokeType="INSIDE">
+               <points>
+                  <Double fx:value="-100.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="100.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="100.0" />
+                  <Double fx:value="200.0" />
+                  <Double fx:value="-100" />
+                  <Double fx:value="200" />
+                  <Double fx:value="-100.0" />
+                  <Double fx:value="0.0" />
+               </points>
+            </Polyline>
+            <Polyline fx:id="airplane" fill="#009eff" layoutX="417.0" layoutY="274.0" strokeType="INSIDE" visible="false">
+               <points>
+                  <Double fx:value="-30.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="-5.0" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="-5.0" />
+                  <Double fx:value="40.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="45" />
+                  <Double fx:value="5" />
+                  <Double fx:value="40.0" />
+                  <Double fx:value="5" />
+                  <Double fx:value="30.0" />
+                  <Double fx:value="30" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="5" />
+                  <Double fx:value="20.0" />
+                  <Double fx:value="5" />
+                  <Double fx:value="-30" />
+                  <Double fx:value="15" />
+                  <Double fx:value="-40.0" />
+                  <Double fx:value="0.0" />
+                  <Double fx:value="-35.0" />
+                  <Double fx:value="-15.0" />
+                  <Double fx:value="-40.0" />
+                  <Double fx:value="-5" />
+                  <Double fx:value="-30" />
+                  <Double fx:value="-5.0" />
+                  <Double fx:value="20" />
+                  <Double fx:value="-30.0" />
+                  <Double fx:value="0.0" />
+               </points>
+            </Polyline>
+         </children></AnchorPane>
+  </children>
+</VBox>
