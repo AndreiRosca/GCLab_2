@@ -64,12 +64,12 @@ public class FXShapeTransformer {
 		rotater.stopRotation();
 	}
 
-	public void startRotation(Polyline airplane, Point center) {
-		rotater.startRotation(airplane, center);
+	public void startRotation(Polyline shape, Point center) {
+		rotater.startRotation(shape, center);
 	}
 
 	private class ContinuousShapeRotater implements Runnable {
-		private static final int ANGLE = 2;
+		private static final int ANGLE = -2;
 		private volatile boolean rotating;
 		private Polyline shape;
 		private Point rotationCenter;
@@ -89,8 +89,8 @@ public class FXShapeTransformer {
 			rotating = false;
 		}
 
-		public void startRotation(Polyline airplane, Point center) {
-			this.shape = airplane;
+		public void startRotation(Polyline shape, Point center) {
+			this.shape = shape;
 			this.rotationCenter = center;
 			rotating = true;
 			new Thread(this).start();
