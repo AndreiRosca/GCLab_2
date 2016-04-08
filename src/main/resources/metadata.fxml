@@ -116,6 +116,8 @@
                   <Double fx:value="0.0" />
                </points>
             </Polyline>
+<!--             <Line layoutX="407.0" layoutY="264.0"  endX="0" startX="0" endY="250" startY="-250" />
+            <Line layoutX="407.0" layoutY="264.0"  endX="250" startX="-250" endY="0" startY="0" /> -->
          </children></AnchorPane>
   </children>
 </VBox>

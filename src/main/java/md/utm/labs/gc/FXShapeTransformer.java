@@ -10,10 +10,10 @@ import md.utm.labs.gc.shapes.Point;
 import md.utm.labs.gc.shapes.Shape;
 
 public class FXShapeTransformer {
-	private static final int HOSIZONTAL_DISPLACEMENT = 5;
-	private static final int VERTICAL_DISPLACEMENT = 20;
-	private static final double SCALE_FACTOR = 0.5;
-	private static final int ROTATION_ANGLE = 360 / 10;
+	private static final int HOSIZONTAL_DISPLACEMENT = 100;
+	private static final int VERTICAL_DISPLACEMENT = 200;
+	private static final double SCALE_FACTOR = .9;
+	private static final int ROTATION_ANGLE = 90;
 	private static final int NUMBER_OF_TRAILING_SHAPES = 16;
 	private ShapeManipulator manipulator;
 	private ContinuousShapeRotater rotater = new ContinuousShapeRotater();
@@ -55,7 +55,7 @@ public class FXShapeTransformer {
 	public void reflectShape(Polyline fxShape, double slope) {
 		new FXShapeTransformationTemplate() {
 			protected void transformShape(Shape shape) {
-				manipulator.reflectAround(shape, slope);
+				manipulator.reflectAround(shape, -slope);
 			}
 		}.transform(fxShape);
 	}
@@ -98,9 +98,7 @@ public class FXShapeTransformer {
 	}
 
 	public List<javafx.scene.shape.Shape> rotateShapeWithTrail(Polyline fxShape) {
-		double width = fxShape.getScene().getWidth();
-		double height = fxShape.getScene().getHeight();
-		Point rotationCenter = new Point(width / 8, height / 8);
+		Point rotationCenter = new Point(0, 0);
 		List<javafx.scene.shape.Shape> trailingShapes = new ArrayList<>();
 		for (int i = 0; i <= 360; i += 360 / NUMBER_OF_TRAILING_SHAPES) {
 			Polyline trailShape = new Polyline(toArray(fxShape.getPoints()));

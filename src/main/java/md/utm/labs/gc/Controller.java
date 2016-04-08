@@ -94,7 +94,7 @@ public class Controller {
 		airplane.setVisible(false);
 		ObservableList<Node> nodes = anchorPane.getChildren();
 		if (nodes.size() > 3)
-			nodes.remove(2, nodes.size());
+			nodes.remove(3, nodes.size());
 	}
 
 	@FXML
@@ -121,13 +121,13 @@ public class Controller {
 	@FXML
 	public void positiveSlopeReflection() {
 		shapeTransformer.reflectShape(squareShape, 1);
-		shapeTransformer.reflectShape(triangleShape, 1);
+		triangleShape.setVisible(false);
 	}
 	
 	@FXML
 	public void negativeSlopeReflection() {
 		shapeTransformer.reflectShape(squareShape, -1);
-		shapeTransformer.reflectShape(triangleShape, -1);		
+		triangleShape.setVisible(false);	
 	}
 	
 	@FXML
@@ -139,7 +139,10 @@ public class Controller {
 	
 	@FXML
 	public void startAirplane() {
-		shapeTransformer.startRotation(airplane, new Point(50, 100));
+		shapeTransformer.rotateShape(airplane, new Point(10, 10));
+		airplane.setLayoutX(airplane.getLayoutX() + 100);
+		airplane.setLayoutY(airplane.getLayoutY() + 100);
+		shapeTransformer.startRotation(airplane, new Point(10, 40));
 		startAirplaneMenuItem.setDisable(true);
 		stopAirplaneMenuItem.setDisable(false);
 	}
